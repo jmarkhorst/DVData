@@ -1,4 +1,0 @@
-Manifest-Version: 1.0
-Implementation-Vendor: Progress Software
-Implementation-Title: OE Rest Adapter
-
