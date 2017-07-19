@@ -1,2 +1,0 @@
-# DVData
-DVData test project.
