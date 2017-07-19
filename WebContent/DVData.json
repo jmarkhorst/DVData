@@ -1,0 +1,620 @@
+{
+    "version": "1.4",
+    "lastModified": "Wed Jul 19 17:49:54 EDT 2017",
+    "services": [{
+        "name": "DVData",
+        "address": "\/rest\/DVData",
+        "useRequest": true,
+        "resources": [
+            {
+                "name": "PickTickLns",
+                "path": "\/PickTickLns",
+                "autoSave": false,
+                "schema": {
+                    "type": "object",
+                    "additionalProperties": false,
+                    "properties": {"dsPickTickLns": {
+                        "type": "object",
+                        "additionalProperties": false,
+                        "properties": {"ttPickTickLns": {
+                            "type": "array",
+                            "primaryKey": [
+                                "PTNum",
+                                "PTSeq"
+                            ],
+                            "items": {
+                                "additionalProperties": false,
+                                "properties": {
+                                    "_id": {
+                                        "type": "string",
+                                        "semanticType": "Internal"
+                                    },
+                                    "_errorString": {
+                                        "type": "string",
+                                        "semanticType": "Internal"
+                                    },
+                                    "seq": {
+                                        "type": "integer",
+                                        "ablType": "INTEGER",
+                                        "default": 0,
+                                        "title": "seq"
+                                    },
+                                    "SetId": {
+                                        "type": "string",
+                                        "ablType": "CHARACTER",
+                                        "default": "",
+                                        "title": "SetId"
+                                    },
+                                    "Scanseq": {
+                                        "type": "integer",
+                                        "ablType": "INTEGER",
+                                        "default": 0,
+                                        "title": "Scanseq"
+                                    },
+                                    "PickBin": {
+                                        "type": "string",
+                                        "ablType": "CHARACTER",
+                                        "default": "",
+                                        "title": "PickBin"
+                                    },
+                                    "ProdCd": {
+                                        "type": "string",
+                                        "ablType": "CHARACTER",
+                                        "default": "",
+                                        "title": "ProdCd"
+                                    },
+                                    "QtyToPick": {
+                                        "type": "integer",
+                                        "ablType": "INTEGER",
+                                        "default": 0,
+                                        "title": "QtyToPick"
+                                    },
+                                    "UmCd": {
+                                        "type": "string",
+                                        "ablType": "CHARACTER",
+                                        "default": "",
+                                        "title": "UmCd"
+                                    },
+                                    "ProdDesc": {
+                                        "type": "string",
+                                        "ablType": "CHARACTER",
+                                        "default": "",
+                                        "title": "ProdDesc"
+                                    },
+                                    "PtNum": {
+                                        "type": "string",
+                                        "ablType": "CHARACTER",
+                                        "default": "",
+                                        "title": "PtNum"
+                                    },
+                                    "PtSeq": {
+                                        "type": "integer",
+                                        "ablType": "INTEGER",
+                                        "default": 0,
+                                        "title": "PtSeq"
+                                    },
+                                    "QtyPtLnPcs": {
+                                        "type": "integer",
+                                        "ablType": "INTEGER",
+                                        "default": 0,
+                                        "title": "QtyPtLnPcs"
+                                    },
+                                    "QtyPicked": {
+                                        "type": "integer",
+                                        "ablType": "INTEGER",
+                                        "default": 0,
+                                        "title": "QtyPicked"
+                                    },
+                                    "QtyLbls": {
+                                        "type": "integer",
+                                        "ablType": "INTEGER",
+                                        "default": 0,
+                                        "title": "QtyLbls"
+                                    },
+                                    "UpdtDateTime": {
+                                        "type": "string",
+                                        "ablType": "DATETIME",
+                                        "default": null,
+                                        "title": "UpdtDateTime",
+                                        "format": "date-time"
+                                    },
+                                    "PickBinSeq": {
+                                        "type": "integer",
+                                        "ablType": "INTEGER",
+                                        "default": 0,
+                                        "title": "PickBinSeq"
+                                    }
+                                }
+                            }
+                        }}
+                    }}
+                },
+                "operations": [
+                    {
+                        "name": "SubmitPickTickLns",
+                        "path": "\/SubmitPickTickLns",
+                        "useBeforeImage": true,
+                        "type": "submit",
+                        "verb": "put",
+                        "params": [
+                            {
+                                "name": "dsPickTickLns",
+                                "type": "REQUEST_BODY"
+                            },
+                            {
+                                "name": "dsPickTickLns",
+                                "type": "RESPONSE_BODY"
+                            }
+                        ]
+                    },
+                    {
+                        "path": "",
+                        "useBeforeImage": true,
+                        "type": "update",
+                        "verb": "put",
+                        "params": [
+                            {
+                                "name": "dsPickTickLns",
+                                "type": "REQUEST_BODY"
+                            },
+                            {
+                                "name": "dsPickTickLns",
+                                "type": "RESPONSE_BODY"
+                            }
+                        ]
+                    },
+                    {
+                        "path": "?filter={filter}",
+                        "useBeforeImage": true,
+                        "type": "read",
+                        "verb": "get",
+                        "mappingType": "JFP",
+                        "capabilities": "ablFilter,top,skip,id,orderBy",
+                        "params": [
+                            {
+                                "name": "filter",
+                                "type": "QUERY"
+                            },
+                            {
+                                "name": "dsPickTickLns",
+                                "type": "RESPONSE_BODY"
+                            }
+                        ]
+                    },
+                    {
+                        "path": "",
+                        "useBeforeImage": true,
+                        "type": "delete",
+                        "verb": "delete",
+                        "params": [
+                            {
+                                "name": "dsPickTickLns",
+                                "type": "REQUEST_BODY"
+                            },
+                            {
+                                "name": "dsPickTickLns",
+                                "type": "RESPONSE_BODY"
+                            }
+                        ]
+                    },
+                    {
+                        "path": "",
+                        "useBeforeImage": true,
+                        "type": "create",
+                        "verb": "post",
+                        "params": [
+                            {
+                                "name": "dsPickTickLns",
+                                "type": "REQUEST_BODY"
+                            },
+                            {
+                                "name": "dsPickTickLns",
+                                "type": "RESPONSE_BODY"
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "name": "PoGDlblList",
+                "path": "\/PoGDlblList",
+                "autoSave": false,
+                "schema": {
+                    "type": "object",
+                    "additionalProperties": false,
+                    "properties": {"dspolist": {
+                        "type": "object",
+                        "additionalProperties": false,
+                        "properties": {"ttpolist": {
+                            "type": "array",
+                            "primaryKey": ["PoNum"],
+                            "items": {
+                                "additionalProperties": false,
+                                "properties": {
+                                    "_id": {
+                                        "type": "string",
+                                        "semanticType": "Internal"
+                                    },
+                                    "_errorString": {
+                                        "type": "string",
+                                        "semanticType": "Internal"
+                                    },
+                                    "PoNum": {
+                                        "type": "string",
+                                        "ablType": "CHARACTER",
+                                        "default": "",
+                                        "title": "PoNum"
+                                    },
+                                    "OkToPrint": {
+                                        "type": "boolean",
+                                        "ablType": "LOGICAL",
+                                        "default": false,
+                                        "title": "OkToPrint"
+                                    },
+                                    "PrintPo": {
+                                        "type": "boolean",
+                                        "ablType": "LOGICAL",
+                                        "default": false,
+                                        "title": "PrintPo"
+                                    },
+                                    "ShipDate": {
+                                        "type": "string",
+                                        "ablType": "DATETIME",
+                                        "default": null,
+                                        "title": "ShipDate",
+                                        "format": "date-time"
+                                    },
+                                    "NumBoxes": {
+                                        "type": "number",
+                                        "ablType": "DECIMAL",
+                                        "default": 0,
+                                        "title": "NumBoxes"
+                                    },
+                                    "ShipTotal": {
+                                        "type": "number",
+                                        "ablType": "DECIMAL",
+                                        "default": 0,
+                                        "title": "ShipTotal"
+                                    },
+                                    "ShipToWh": {
+                                        "type": "string",
+                                        "ablType": "CHARACTER",
+                                        "default": "",
+                                        "title": "ShipToWh"
+                                    },
+                                    "VendorKey": {
+                                        "type": "string",
+                                        "ablType": "CHARACTER",
+                                        "default": "",
+                                        "title": "VendorKey"
+                                    },
+                                    "CSVfile": {
+                                        "type": "string",
+                                        "ablType": "CHARACTER",
+                                        "default": "",
+                                        "title": "CSVfile"
+                                    },
+                                    "CSVDate": {
+                                        "type": "string",
+                                        "ablType": "DATETIME",
+                                        "default": null,
+                                        "title": "CSVDate",
+                                        "format": "date-time"
+                                    },
+                                    "DocXfile": {
+                                        "type": "string",
+                                        "ablType": "CHARACTER",
+                                        "default": "",
+                                        "title": "DocXfile"
+                                    },
+                                    "DocXDate": {
+                                        "type": "string",
+                                        "ablType": "DATETIME",
+                                        "default": null,
+                                        "title": "DocXDate",
+                                        "format": "date-time"
+                                    },
+                                    "LinkName": {
+                                        "type": "string",
+                                        "ablType": "CHARACTER",
+                                        "default": "",
+                                        "title": "LinkName"
+                                    },
+                                    "lblSize": {
+                                        "type": "string",
+                                        "ablType": "CHARACTER",
+                                        "default": "",
+                                        "title": "lblSize"
+                                    }
+                                }
+                            }
+                        }}
+                    }}
+                },
+                "operations": [
+                    {
+                        "path": "",
+                        "useBeforeImage": true,
+                        "type": "delete",
+                        "verb": "delete",
+                        "params": [
+                            {
+                                "name": "dspolist",
+                                "type": "REQUEST_BODY"
+                            },
+                            {
+                                "name": "dspolist",
+                                "type": "RESPONSE_BODY"
+                            }
+                        ]
+                    },
+                    {
+                        "path": "",
+                        "useBeforeImage": true,
+                        "type": "update",
+                        "verb": "put",
+                        "params": [
+                            {
+                                "name": "dspolist",
+                                "type": "REQUEST_BODY"
+                            },
+                            {
+                                "name": "dspolist",
+                                "type": "RESPONSE_BODY"
+                            }
+                        ]
+                    },
+                    {
+                        "path": "",
+                        "useBeforeImage": true,
+                        "type": "create",
+                        "verb": "post",
+                        "params": [
+                            {
+                                "name": "dspolist",
+                                "type": "REQUEST_BODY"
+                            },
+                            {
+                                "name": "dspolist",
+                                "type": "RESPONSE_BODY"
+                            }
+                        ]
+                    },
+                    {
+                        "path": "?filter={filter}",
+                        "useBeforeImage": true,
+                        "type": "read",
+                        "verb": "get",
+                        "params": [
+                            {
+                                "name": "filter",
+                                "type": "QUERY"
+                            },
+                            {
+                                "name": "dspolist",
+                                "type": "RESPONSE_BODY"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "SubmitPoGDlblList",
+                        "path": "\/SubmitPoGDlblList",
+                        "useBeforeImage": true,
+                        "type": "submit",
+                        "verb": "put",
+                        "params": [
+                            {
+                                "name": "dspolist",
+                                "type": "REQUEST_BODY"
+                            },
+                            {
+                                "name": "dspolist",
+                                "type": "RESPONSE_BODY"
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "name": "PoLblList",
+                "path": "\/PoLblList",
+                "autoSave": false,
+                "schema": {
+                    "type": "object",
+                    "additionalProperties": false,
+                    "properties": {"dspolist": {
+                        "type": "object",
+                        "additionalProperties": false,
+                        "properties": {"ttpolist": {
+                            "type": "array",
+                            "primaryKey": ["PoNum"],
+                            "items": {
+                                "additionalProperties": false,
+                                "properties": {
+                                    "_id": {
+                                        "type": "string",
+                                        "semanticType": "Internal"
+                                    },
+                                    "_errorString": {
+                                        "type": "string",
+                                        "semanticType": "Internal"
+                                    },
+                                    "PoNum": {
+                                        "type": "string",
+                                        "ablType": "CHARACTER",
+                                        "default": "",
+                                        "title": "PoNum"
+                                    },
+                                    "OkToPrint": {
+                                        "type": "boolean",
+                                        "ablType": "LOGICAL",
+                                        "default": false,
+                                        "title": "OkToPrint"
+                                    },
+                                    "PrintPo": {
+                                        "type": "boolean",
+                                        "ablType": "LOGICAL",
+                                        "default": false,
+                                        "title": "PrintPo"
+                                    },
+                                    "ShipDate": {
+                                        "type": "string",
+                                        "ablType": "DATETIME",
+                                        "default": null,
+                                        "title": "ShipDate",
+                                        "format": "date-time"
+                                    },
+                                    "NumBoxes": {
+                                        "type": "number",
+                                        "ablType": "DECIMAL",
+                                        "default": 0,
+                                        "title": "NumBoxes"
+                                    },
+                                    "ShipTotal": {
+                                        "type": "number",
+                                        "ablType": "DECIMAL",
+                                        "default": 0,
+                                        "title": "ShipTotal"
+                                    },
+                                    "ShipToWh": {
+                                        "type": "string",
+                                        "ablType": "CHARACTER",
+                                        "default": "",
+                                        "title": "ShipToWh"
+                                    },
+                                    "VendorKey": {
+                                        "type": "string",
+                                        "ablType": "CHARACTER",
+                                        "default": "",
+                                        "title": "VendorKey"
+                                    },
+                                    "CSVfile": {
+                                        "type": "string",
+                                        "ablType": "CHARACTER",
+                                        "default": "",
+                                        "title": "CSVfile"
+                                    },
+                                    "CSVDate": {
+                                        "type": "string",
+                                        "ablType": "DATETIME",
+                                        "default": null,
+                                        "title": "CSVDate",
+                                        "format": "date-time"
+                                    },
+                                    "DocXfile": {
+                                        "type": "string",
+                                        "ablType": "CHARACTER",
+                                        "default": "",
+                                        "title": "DocXfile"
+                                    },
+                                    "DocXDate": {
+                                        "type": "string",
+                                        "ablType": "DATETIME",
+                                        "default": null,
+                                        "title": "DocXDate",
+                                        "format": "date-time"
+                                    },
+                                    "LinkName": {
+                                        "type": "string",
+                                        "ablType": "CHARACTER",
+                                        "default": "",
+                                        "title": "LinkName"
+                                    },
+                                    "lblSize": {
+                                        "type": "string",
+                                        "ablType": "CHARACTER",
+                                        "default": "",
+                                        "title": "lblSize"
+                                    }
+                                }
+                            }
+                        }}
+                    }}
+                },
+                "operations": [
+                    {
+                        "path": "",
+                        "useBeforeImage": true,
+                        "type": "create",
+                        "verb": "post",
+                        "params": [
+                            {
+                                "name": "dspolist",
+                                "type": "REQUEST_BODY"
+                            },
+                            {
+                                "name": "dspolist",
+                                "type": "RESPONSE_BODY"
+                            }
+                        ]
+                    },
+                    {
+                        "path": "",
+                        "useBeforeImage": true,
+                        "type": "delete",
+                        "verb": "delete",
+                        "params": [
+                            {
+                                "name": "dspolist",
+                                "type": "REQUEST_BODY"
+                            },
+                            {
+                                "name": "dspolist",
+                                "type": "RESPONSE_BODY"
+                            }
+                        ]
+                    },
+                    {
+                        "path": "?filter={filter}",
+                        "useBeforeImage": true,
+                        "type": "read",
+                        "verb": "get",
+                        "params": [
+                            {
+                                "name": "filter",
+                                "type": "QUERY"
+                            },
+                            {
+                                "name": "dspolist",
+                                "type": "RESPONSE_BODY"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "SubmitPoLblList",
+                        "path": "\/SubmitPoLblList",
+                        "useBeforeImage": true,
+                        "type": "submit",
+                        "verb": "put",
+                        "params": [
+                            {
+                                "name": "dspolist",
+                                "type": "REQUEST_BODY"
+                            },
+                            {
+                                "name": "dspolist",
+                                "type": "RESPONSE_BODY"
+                            }
+                        ]
+                    },
+                    {
+                        "path": "",
+                        "useBeforeImage": true,
+                        "type": "update",
+                        "verb": "put",
+                        "params": [
+                            {
+                                "name": "dspolist",
+                                "type": "REQUEST_BODY"
+                            },
+                            {
+                                "name": "dspolist",
+                                "type": "RESPONSE_BODY"
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    }]
+}
